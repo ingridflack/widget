@@ -4,6 +4,7 @@
 Widget que permite que o usuário envie um feedback e um screenshot sobre o site que está sendo utilizado. 
 
 ### Link para testar [aqui](https://widget-self.vercel.app/)
+### Para saber mais sobre o backend da aplicação, visite [esse repositório](https://github.com/ingridflack/widget-backend)
 
 
 ## ✨ Tecnologias
