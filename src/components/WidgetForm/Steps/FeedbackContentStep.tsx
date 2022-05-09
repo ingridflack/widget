@@ -26,19 +26,23 @@ const FeedbackContentStep = ({
   const handleSubmitFeedback = async (e: FormEvent) => {
     e.preventDefault();
 
-    setIsSendingFeedback(true);
+    try {
+      setIsSendingFeedback(true);
 
-    // console.log(comment, screenshot);
+      await api.post("feedbacks", {
+        type: feedbackType,
+        comment,
+        screenshot,
+      });
 
-    await api.post("feedbacks", {
-      type: feedbackType,
-      comment,
-      screenshot,
-    });
+      // console.log(comment, screenshot);
 
-    setIsSendingFeedback(false);
-
-    onFeedbackSent();
+      onFeedbackSent();
+    } catch (err) {
+      console.error({ err });
+    } finally {
+      setIsSendingFeedback(false);
+    }
   };
 
   return (
